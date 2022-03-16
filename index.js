@@ -15,12 +15,19 @@ let getSearch = () => {
 function render(result) {
   let card = "";
   result.forEach((data) => {
-    card += ` <div>
-                  <img src=${data.urlToImage} />
-                  <p>${data.title}</p>
-                  <p>${data.description}</p>
-                  <p>${data.url}</p>
-              <div>`;
+    card += `
+    
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+     <div class="card" style="width: 18rem">
+        <img src=${data.urlToImage} class="card-img-top" alt="..."/>
+      <div class="card-body">
+        <p class="card-text">${data.title}</p>
+        <p class="card-text">${data.description}</p>
+        <p class="card-text">${data.url}</p>
+      </div> 
+    </div>
+    </div>`;
   });
   return card;
 }
